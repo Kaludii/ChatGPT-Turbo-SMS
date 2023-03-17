@@ -132,7 +132,7 @@ To host the application on DigitalOcean like in the video example shown above, f
     
 11.  Run ngrok to create a tunnel to the Flask application:
     
-    `./ngrok http 5000`
+    `ngrok http 5000`
     
 12.  Copy the webhook URL from the ngrok window followed by `/sms` and add it to the two Twlio sections, similar to 3A from the running locally section.
 
