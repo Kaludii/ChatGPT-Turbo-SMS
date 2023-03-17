@@ -46,7 +46,9 @@ https://user-images.githubusercontent.com/63890666/225838063-f71c5a9b-fe22-4882-
 4.  Create a `.env` file in the project root directory and copy your Twilio Account SID, Auth Token, and OpenAI API Key:
     
     `TWILIO_ACCOUNT_SID=your_twilio_account_sid
+    
     TWILIO_AUTH_TOKEN=your_twilio_auth_token
+    
     OPENAI_API_KEY=your_openai_api_key` 
 
 Replace `your_twilio_account_sid`, `your_twilio_auth_token`, and `your_openai_api_key` with the corresponding values from your Twilio and OpenAI accounts.
@@ -87,7 +89,9 @@ To host the application on DigitalOcean like in the video example shown above, f
 4.  Update your system packages and install necessary dependencies:
     
     `sudo apt-get update
+    
     sudo apt-get upgrade
+    
     sudo apt-get install python3-pip python3-venv` 
     
 5.  Clone the Flask application repository or transfer the Flask application files to the droplet using `scp` or an SFTP client, and also configure the `.env` file as described in hosting locally section.
@@ -99,11 +103,13 @@ To host the application on DigitalOcean like in the video example shown above, f
 7.  Activate the virtual environment and install the Flask application's dependencies:
     
     `source venv/bin/activate
+    
     pip install -r requirements.txt` 
     
 8.  Set the Flask environment variables:
     
     `export FLASK_APP=app.py`  Replace 'app.py' with the name of the Flask application file
+    
     `export FLASK_ENV=production` 
     
 9.  Run the Flask application using the `flask run` command:
@@ -115,7 +121,9 @@ To host the application on DigitalOcean like in the video example shown above, f
 10.  In another terminal (SSH) session, install ngrok on your DigitalOcean droplet:
     
     `wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip
+    
     sudo apt-get install unzip
+    
     unzip ngrok-stable-linux-amd64.zip` 
     
 11.  Go to the following [website](https://dashboard.ngrok.com/get-started/setup), sign up for ngrok, download the installer (which is also in a zipped format in the directory) and connect your authtoken to your account.
