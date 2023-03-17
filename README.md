@@ -1,5 +1,6 @@
 
 
+
 # ChatGPT-Turbo SMS
 
 ChatGPT-Turbo SMS is a Flask application that allows users to send SMS text messages to ChatGPT-Turbo using Twilio and receive instant responses. This application can be run locally or hosted on services like DigitalOcean to stay active 24/7 using [tmux](https://github.com/tmux/tmux/wiki). The application uses [Flask](https://flask.palletsprojects.com/), [Twilio](https://www.twilio.com/), [OpenAI](https://openai.com/), and [ngrok](https://ngrok.com/) python libraries.
@@ -71,7 +72,7 @@ Replace `your_twilio_account_sid`, `your_twilio_auth_token`, and `your_openai_ap
 	
    > Add the webhook URL to the following two Twilio pages, [Phone Numbers > Manage > Active Numbers](https://console.twilio.com/us1/develop/phone-numbers/manage/incoming?frameUrl=/console/phone-numbers/incoming/), and [Conversations > Manage > Global Webhooks](https://console.twilio.com/us1/develop/conversations/manage/webhooks?frameUrl=/console/conversations/configuration/webhooks?x-target-region=us1). Make sure both are with HTTP POST and for the second link make sure "onMessageAdded" is selected in the Post-webhooks section. Example pictures:
 
-![image](https://user-images.githubusercontent.com/63890666/225839323-dbef5054-87af-48a4-8d0c-516dcc084fd3.png)
+![image](https://user-images.githubusercontent.com/63890666/225955417-c6c8f306-9f77-4497-bdd8-b8c7b382e6f6.png)
     
 5.  Send an SMS to your Twilio phone number. ChatGPT-Turbo will process the message and you'll receive an immediate response.
     
@@ -118,7 +119,7 @@ To host the application on DigitalOcean like in the video example shown above, f
     
     This will start the Flask application on the default port 5000.
     
-10.  In another terminal (SSH) session, install ngrok on your DigitalOcean droplet:
+10.  In another terminal (SSH) session, install ngrok on your DigitalOcean droplet and connect your authtoken to your account using [this](https://dashboard.ngrok.com/get-started/setup) website:
     
     `wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip
     
@@ -126,9 +127,7 @@ To host the application on DigitalOcean like in the video example shown above, f
     
     unzip ngrok-stable-linux-amd64.zip` 
     
-11.  Go to the following [website](https://dashboard.ngrok.com/get-started/setup), sign up for ngrok, download the installer (which is also in a zipped format in the directory) and connect your authtoken to your account.
-    
-12.  Run ngrok to create a tunnel to the Flask application:
+11.  Run ngrok to create a tunnel to the Flask application:
     
     `./ngrok http 5000`
 
@@ -148,11 +147,17 @@ To host the application on DigitalOcean like in the video example shown above, f
 
 `python app.py` 
 
-6.  Go to the following [website](https://dashboard.ngrok.com/get-started/setup), sign up for ngrok, download the installer (which is also in a zipped format in the directory) and connect your authtoken to your account.
-
-7.  In a separate terminal, start a new `tmux` session:
+6.  In a separate terminal, start a new `tmux` session:
     
     `tmux new -s chatgpt-turbo-sms-ngrok` 
+
+7.  Install ngrok on your DigitalOcean droplet and connect your authtoken to your account using [this](https://dashboard.ngrok.com/get-started/setup) website:
+    
+    `wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip
+    
+    sudo apt-get install unzip
+    
+    unzip ngrok-stable-linux-amd64.zip` 
 
 8.  Start ngrok:
 
