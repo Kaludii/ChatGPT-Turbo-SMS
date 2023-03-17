@@ -1,4 +1,5 @@
 
+
 # ChatGPT-Turbo SMS
 
 ChatGPT-Turbo SMS is a Flask application that allows users to send SMS text messages to ChatGPT-Turbo using Twilio and receive instant responses. This application can be run locally or hosted on services like DigitalOcean to stay active 24/7 using [tmux](https://github.com/tmux/tmux/wiki). The application uses [Flask](https://flask.palletsprojects.com/), [Twilio](https://www.twilio.com/), [OpenAI](https://openai.com/), and [ngrok](https://ngrok.com/) python libraries.
@@ -75,40 +76,89 @@ Replace `your_twilio_account_sid`, `your_twilio_auth_token`, and `your_openai_ap
 
 ### Hosting the application on DigitalOcean
 
-1.  To host the application on DigitalOcean like in the video example shown above, follow these steps:
-   > 	a.  Deploy a new Droplet on DigitalOcean.
-   >
-   > 	b.  Install the required dependencies on the Droplet.
-   >
-   > 	c.  Clone the repository and configure the `.env` file as described above.
-   >
-   > 	d.  Start a new `tmux` session:
+To host the application on DigitalOcean like in the video example shown above, follow these steps:
+
+1.  Create a DigitalOcean account if you don't have one: [https://www.digitalocean.com/](https://www.digitalocean.com/)
+    
+2.  Create a new droplet (virtual machine) by clicking "Create" and then "Droplets." Choose an appropriate plan, region, and operating system (e.g., Ubuntu 20.04 LTS) for your droplet. (I used the cheapest $4 dollar plan and it works perfectly, you don't need any more than that)
+    
+3.  Use an SSH client (e.g., PuTTY on Windows or `ssh` on macOS/Linux) to connect to your droplet using its IP address, username `root`, and the provided password.
+    
+4.  Update your system packages and install necessary dependencies:
+    
+    `sudo apt-get update
+    sudo apt-get upgrade
+    sudo apt-get install python3-pip python3-venv` 
+    
+5.  Clone the Flask application repository or transfer the Flask application files to the droplet using `scp` or an SFTP client, and also configure the `.env` file as described in hosting locally section.
+    
+6.  Navigate to the Flask application directory and create a virtual environment:
+    
+    `python3 -m venv venv` 
+    
+7.  Activate the virtual environment and install the Flask application's dependencies:
+    
+    `source venv/bin/activate
+    pip install -r requirements.txt` 
+    
+8.  Set the Flask environment variables:
+    
+    `export FLASK_APP=app.py`  Replace 'app.py' with the name of the Flask application file
+    `export FLASK_ENV=production` 
+    
+9.  Run the Flask application using the `flask run` command:
+    
+    `flask run` 
+    
+    This will start the Flask application on the default port 5000.
+    
+10.  In another terminal (SSH) session, install ngrok on your DigitalOcean droplet:
+    
+    `wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip
+    sudo apt-get install unzip
+    unzip ngrok-stable-linux-amd64.zip` 
+    
+11.  Go to the following [website](https://dashboard.ngrok.com/get-started/setup), sign up for ngrok, download the installer (which is also in a zipped format in the directory) and connect your authtoken to your account.
+    
+12.  Run ngrok to create a tunnel to the Flask application:
+    
+    `./ngrok http 5000`
+
+### Hosting the application on DigitalOcean (Using tmux to keep session active after console is closed)
+
+1.  Deploy a new Droplet on DigitalOcean.
+
+2.  Install the required dependencies on the Droplet.
+
+3.  Clone the repository and configure the `.env` file as described in hosting locally section.
+
+4.  Start a new `tmux` session:
 
 `tmux new -s chatgpt-turbo-sms` 
 
-2.  Run the application within the `tmux` session:
+5.  Run the application within the `tmux` session:
 
 `python app.py` 
 
-3.  Go to the following [website](https://dashboard.ngrok.com/get-started/setup), sign up for ngrok and connect your authtoken to your account.
+6.  Go to the following [website](https://dashboard.ngrok.com/get-started/setup), sign up for ngrok, download the installer (which is also in a zipped format in the directory) and connect your authtoken to your account.
 
-4.  In a separate terminal, start a new `tmux` session:
+7.  In a separate terminal, start a new `tmux` session:
     
     `tmux new -s chatgpt-turbo-sms-ngrok` 
 
-5.  Start ngrok:
+8.  Start ngrok:
 
     `start ngrok` 
 
-6.  Copy the webhook URL from the ngrok window followed by `/sms`, similar to 3A from the running locally section.
+9.  Copy the webhook URL from the ngrok window followed by `/sms`, similar to 3A from the running locally section.
 
-7.  Detach from the `tmux` session by pressing `Ctrl-b` followed by `d`.
+10.  Detach from the `tmux` session by pressing `Ctrl-b` followed by `d`.
 
-Your application will continue running even after you close your console. To reattach to the `tmux` session, use:
+The application will continue running even after you close your console. To reattach to the `tmux` session, use:
 
 `tmux attach -t chatgpt-turbo-sms`, and `tmux attach -t chatgpt-turbo-ngrok`
 
-8.  Copy the webhook URL from the ngrok window followed by `/sms`, similar to 3A from the running locally section.
+11.  Copy the webhook URL from the ngrok window followed by `/sms` and add it to the two Twlio sections, similar to 3A from the running locally section.
 
 ## About the Developer
 
