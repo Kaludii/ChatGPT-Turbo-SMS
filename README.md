@@ -46,11 +46,12 @@ https://user-images.githubusercontent.com/63890666/225838063-f71c5a9b-fe22-4882-
     
 4.  Create a `.env` file in the project root directory and copy your Twilio Account SID, Auth Token, and OpenAI API Key:
     
-    `TWILIO_ACCOUNT_SID=your_twilio_account_sid
+
+	    `TWILIO_ACCOUNT_SID=your_twilio_account_sid
     
-    TWILIO_AUTH_TOKEN=your_twilio_auth_token
+	    TWILIO_AUTH_TOKEN=your_twilio_auth_token
     
-    OPENAI_API_KEY=your_openai_api_key` 
+	    OPENAI_API_KEY=your_openai_api_key`
 
 Replace `your_twilio_account_sid`, `your_twilio_auth_token`, and `your_openai_api_key` with the corresponding values from your Twilio and OpenAI accounts.
 
@@ -89,11 +90,11 @@ To host the application on DigitalOcean like in the video example shown above, f
     
 4.  Update your system packages and install necessary dependencies:
     
-    `sudo apt-get update
+	    `sudo apt-get update
     
-    sudo apt-get upgrade
+	    sudo apt-get upgrade
     
-    sudo apt-get install python3-pip python3-venv` 
+	    sudo apt-get install python3-pip python3-venv` 
     
 5.  Clone the Flask application repository or transfer the Flask application files to the droplet using `scp` or an SFTP client, and also configure the `.env` file as described in hosting locally section.
     
@@ -103,15 +104,15 @@ To host the application on DigitalOcean like in the video example shown above, f
     
 7.  Activate the virtual environment and install the Flask application's dependencies:
     
-    `source venv/bin/activate
+	    `source venv/bin/activate
     
-    pip install -r requirements.txt` 
+	    pip install -r requirements.txt` 
     
 8.  Set the Flask environment variables:
     
-    `export FLASK_APP=app.py`  Replace 'app.py' with the name of the Flask application file
+	    `export FLASK_APP=app.py
     
-    `export FLASK_ENV=production` 
+	    export FLASK_ENV=production` 
     
 9.  Run the Flask application using the `flask run` command:
     
@@ -153,11 +154,11 @@ To host the application on DigitalOcean like in the video example shown above, f
 
 7.  Install ngrok on your DigitalOcean droplet and connect your authtoken to your account using [this](https://dashboard.ngrok.com/get-started/setup) website:
     
-    `wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip
+	    `wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip
     
-    sudo apt-get install unzip
+	    sudo apt-get install unzip
     
-    unzip ngrok-stable-linux-amd64.zip` 
+	    unzip ngrok-stable-linux-amd64.zip` 
 
 8.  Start ngrok:
 
