@@ -32,8 +32,9 @@ https://user-images.githubusercontent.com/63890666/225838063-f71c5a9b-fe22-4882-
 
 1.  Clone the repository:
     
-    `git clone https://github.com/Kaludii/ChatGPT-Turbo-SMS.git
-    cd ChatGPT-Turbo-SMS` 
+    	`git clone https://github.com/Kaludii/ChatGPT-Turbo-SMS.git
+    
+    	cd ChatGPT-Turbo-SMS` 
     
 2.  Create and activate a virtual environment:
     
