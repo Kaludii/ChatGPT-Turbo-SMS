@@ -100,9 +100,7 @@ Replace `your_twilio_account_sid`, `your_twilio_auth_token`, and `your_openai_ap
 
     `start ngrok` 
 
-6.  Run the application within the `tmux` session:
-
-`python app.py` 
+6.  Copy the webhook URL from the ngrok window followed by `/sms`, similar to 3A from the running locally section.
 
 7.  Detach from the `tmux` session by pressing `Ctrl-b` followed by `d`.
 
