@@ -58,17 +58,19 @@ Replace `your_twilio_account_sid`, `your_twilio_auth_token`, and `your_openai_ap
     
     `python app.py` 
     
-2.  In a separate terminal, start ngrok:
+2.  Go to the following [website](https://dashboard.ngrok.com/get-started/setup), sign up for ngrok and connect your authtoken to your account.
+
+3.  In a separate terminal, start ngrok:
     
     `ngrok http 5000` 
     
-3.  Configure your Twilio phone number's messaging webhook with the generated ngrok URL followed by `/sms`. For example, if your ngrok URL is `https://abcd1234.ngrok.io`, set the webhook to `https://abcd1234.ngrok.io/sms`.
+4.  Configure your Twilio phone number's messaging webhook with the generated ngrok URL followed by `/sms`. For example, if your ngrok URL is `https://abcd1234.ngrok.io`, set the webhook to `https://abcd1234.ngrok.io/sms`.
 	
    > Add the webhook URL to the following two Twilio pages, [Phone Numbers > Manage > Active Numbers](https://console.twilio.com/us1/develop/phone-numbers/manage/incoming?frameUrl=/console/phone-numbers/incoming/PN4b2f478c4ce3bdeb706ba139c1468cda?x-target-region=us1), and [Conversations > Manage > Global Webhooks](https://console.twilio.com/us1/develop/conversations/manage/webhooks?frameUrl=/console/conversations/configuration/webhooks?x-target-region=us1). Make sure both are with HTTP POST and for the second link make sure "onMessageAdded" is selected in the Post-webhooks section. Example pictures:
 
 ![image](https://user-images.githubusercontent.com/63890666/225839323-dbef5054-87af-48a4-8d0c-516dcc084fd3.png)
     
-4.  Send an SMS to your Twilio phone number. ChatGPT-Turbo will process the message and you'll receive an immediate response.
+5.  Send an SMS to your Twilio phone number. ChatGPT-Turbo will process the message and you'll receive an immediate response.
     
 
 ### Hosting the application on DigitalOcean
@@ -88,27 +90,28 @@ Replace `your_twilio_account_sid`, `your_twilio_auth_token`, and `your_openai_ap
 
 `python app.py` 
 
-3.  In a separate terminal, start a new `tmux` session:
+3.  Go to the following [website](https://dashboard.ngrok.com/get-started/setup), sign up for ngrok and connect your authtoken to your account.
+
+4.  In a separate terminal, start a new `tmux` session:
     
     `tmux new -s chatgpt-turbo-sms-ngrok` 
 
-4.  Start ngrok:
+5.  Start ngrok:
 
     `start ngrok` 
 
-5.  Run the application within the `tmux` session:
+6.  Run the application within the `tmux` session:
 
 `python app.py` 
 
-6.  Detach from the `tmux` session by pressing `Ctrl-b` followed by `d`.
+7.  Detach from the `tmux` session by pressing `Ctrl-b` followed by `d`.
 
 Your application will continue running even after you close your console. To reattach to the `tmux` session, use:
 
 `tmux attach -t chatgpt-turbo-sms`, and `tmux attach -t chatgpt-turbo-ngrok`
 
-7.  Copy the webhook URL from the ngrok window followed by `/sms`, similar to 3A from the running locally section.
+8.  Copy the webhook URL from the ngrok window followed by `/sms`, similar to 3A from the running locally section.
 
 ## About the Developer
 
 This app was developed by [Kaludii](https://github.com/Kaludii) using the the different libraries linked above. Kaludii is an AI enthusiast who is passionate about developing and applying large learning models to solve real-world problems quickly and stress-free.
-
