@@ -133,6 +133,8 @@ To host the application on DigitalOcean like in the video example shown above, f
 11.  Run ngrok to create a tunnel to the Flask application:
     
     `./ngrok http 5000`
+    
+12.  Copy the webhook URL from the ngrok window followed by `/sms` and add it to the two Twlio sections, similar to 3A from the running locally section.
 
 ### Hosting the application on DigitalOcean (Using tmux to keep session active after console is closed)
 
@@ -166,7 +168,7 @@ To host the application on DigitalOcean like in the video example shown above, f
 
     `start ngrok` 
 
-9.  Copy the webhook URL from the ngrok window followed by `/sms`, similar to 3A from the running locally section.
+9.  Copy the webhook URL from the ngrok window followed by `/sms` and add it to the two Twlio sections, similar to 3A from the running locally section.
 
 10.  Detach from the `tmux` session by pressing `Ctrl-b` followed by `d`.
 
@@ -174,7 +176,6 @@ The application will continue running even after you close your console. To reat
 
 `tmux attach -t chatgpt-turbo-sms`, and `tmux attach -t chatgpt-turbo-ngrok`
 
-11.  Copy the webhook URL from the ngrok window followed by `/sms` and add it to the two Twlio sections, similar to 3A from the running locally section.
 
 ## About the Developer
 
