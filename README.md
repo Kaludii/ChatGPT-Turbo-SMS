@@ -1,7 +1,7 @@
 
 # ChatGPT-Turbo SMS
 
-ChatGPT-Turbo SMS is a Flask application that allows users to send SMS text messages to ChatGPT-Turbo using Twilio and receive instant responses. This application can be run locally or hosted on services like DigitalOcean to stay active 24/7 using [tmux](https://github.com/tmux/tmux/wiki). The application uses [Flask](https://flask.palletsprojects.com/), [Twilio](https://www.twilio.com/), [OpenAI](https://openai.com/), and [ngrok](https://ngrok.com/).
+ChatGPT-Turbo SMS is a Flask application that allows users to send SMS text messages to ChatGPT-Turbo using Twilio and receive instant responses. This application can be run locally or hosted on services like DigitalOcean to stay active 24/7 using [tmux](https://github.com/tmux/tmux/wiki). The application uses [Flask](https://flask.palletsprojects.com/), [Twilio](https://www.twilio.com/), [OpenAI](https://openai.com/), and [ngrok](https://ngrok.com/) python libraries.
 
 ## Video Demonstration
 
