@@ -66,7 +66,7 @@ Replace `your_twilio_account_sid`, `your_twilio_auth_token`, and `your_openai_ap
     
 4.  Configure your Twilio phone number's messaging webhook with the generated ngrok URL followed by `/sms`. For example, if your ngrok URL is `https://abcd1234.ngrok.io`, set the webhook to `https://abcd1234.ngrok.io/sms`.
 	
-   > Add the webhook URL to the following two Twilio pages, [Phone Numbers > Manage > Active Numbers](https://console.twilio.com/us1/develop/phone-numbers/manage/incoming?frameUrl=/console/phone-numbers/incoming/PN4b2f478c4ce3bdeb706ba139c1468cda?x-target-region=us1), and [Conversations > Manage > Global Webhooks](https://console.twilio.com/us1/develop/conversations/manage/webhooks?frameUrl=/console/conversations/configuration/webhooks?x-target-region=us1). Make sure both are with HTTP POST and for the second link make sure "onMessageAdded" is selected in the Post-webhooks section. Example pictures:
+   > Add the webhook URL to the following two Twilio pages, [Phone Numbers > Manage > Active Numbers](https://console.twilio.com/us1/develop/phone-numbers/manage/incoming?frameUrl=/console/phone-numbers/incoming/), and [Conversations > Manage > Global Webhooks](https://console.twilio.com/us1/develop/conversations/manage/webhooks?frameUrl=/console/conversations/configuration/webhooks?x-target-region=us1). Make sure both are with HTTP POST and for the second link make sure "onMessageAdded" is selected in the Post-webhooks section. Example pictures:
 
 ![image](https://user-images.githubusercontent.com/63890666/225839323-dbef5054-87af-48a4-8d0c-516dcc084fd3.png)
     
