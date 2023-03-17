@@ -16,6 +16,8 @@ https://user-images.githubusercontent.com/63890666/225838063-f71c5a9b-fe22-4882-
 -   Utilizes Twilio API for SMS handling and OpenAI API for processing user queries
 -   Supports local deployment and also easily deployable on DigitalOcean using tmux for persistent sessions
 -   Utilizes ngrok for easy access to the application
+-   Can easily change system role by replacing the content 'You are a helpful assistant.' to anything else in line 25 in app.py
+ > `{"role": "system", "content": "You are a helpful assistant."}`
 
 ## Prerequisites
 
@@ -45,8 +47,8 @@ https://user-images.githubusercontent.com/63890666/225838063-f71c5a9b-fe22-4882-
     `TWILIO_ACCOUNT_SID=your_twilio_account_sid
     TWILIO_AUTH_TOKEN=your_twilio_auth_token
     OPENAI_API_KEY=your_openai_api_key` 
+
 Replace `your_twilio_account_sid`, `your_twilio_auth_token`, and `your_openai_api_key` with the corresponding values from your Twilio and OpenAI accounts.
-    
 
 ## Usage
 
