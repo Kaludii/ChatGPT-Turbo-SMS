@@ -38,8 +38,9 @@ https://user-images.githubusercontent.com/63890666/225838063-f71c5a9b-fe22-4882-
     
 2.  Create and activate a virtual environment:
     
-    `python3 -m venv venv
-    source venv/bin/activate` 
+    	`python3 -m venv venv
+    
+    	source venv/bin/activate` 
     
 3.  Install the required packages:
     
